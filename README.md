@@ -94,15 +94,19 @@ Note: The core generation logic lives in graduation/user/Genai.py
 
 
 ## Notebooks
-- ** `fitgenie11.ipynb`** – Demonstrates the meal‑plan generation prompt and API call to Gemini.
+- **`fitgenie11.ipynb`** – Demonstrates the meal‑plan generation prompt and API call to Gemini.
 - **`cluster.ipynb`**  – (Clustering experiments, likely for user segmentation or recipe grouping).
 These notebooks are helpful for understanding the prompt engineering and testing the AI models before integration.
 
 ## Celery Tasks
-- ** `send_otp_via_email`** – Sends OTP during registration.
+- **`send_otp_via_email`** – Sends OTP during registration.
 - **`send_welcome_email`** – Sends a welcome message after verification.
 - **`firestore_data_task`** – Syncs user data from Firestore to the local database, creating users and user states as needed.
 Celery beat schedules can be configured for periodic syncs.
+
+## Contributing:
+This project was developed as a graduation project. Contributions are welcome via issues and pull requests. Please ensure that any changes are tested and adhere to the existing code style.
+
 
 
 
