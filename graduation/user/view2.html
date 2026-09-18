@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body>
+    <form action="#" id="form" enctype="multipart/form-data">
+        <input type="email" name="email" id="email" required>
+        <input type="file" name="image" id="image" accept="image/*" required>
+        <input type="submit" value="Send">
+    </form>
+
+    <script>
+        var form = document.getElementById('form');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            var formData = new FormData(form);
+            var email = document.getElementById('email').value;
+            var image = document.getElementById('image').files[0];
+            formData.append('email', email);
+            formData.append('image', image);
+
+            var url = 'https://127.0.0.1:8000/api/recipe/';
+            
+            try {
+                let response = await fetch(url, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    let data = await response.json();
+                    console.log('Data:', data);
+                } else {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData);
+                }
+            } catch (error) {
+                console.error('Caught an error:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

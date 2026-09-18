@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+</head>
+
+<body>
+    <form action="#" id="form">
+        <input type="email" name="email" id="email" required>
+        <input type="submit" value="send">
+    </form>
+
+
+
+    <script>
+   
+        var form = document.getElementById('form')
+        form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+            
+            email=document.getElementById('email').value
+            let url1 = 'https://127.0.0.1:8000/api/mealplan/'
+            
+            console.log(email)
+            try {
+                let response = await fetch(url1, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        
+                    },
+                    body:JSON.stringify({
+                        email:email
+
+                    })
+                });
+
+                console.log('After fetch:', response);
+
+                if (response.ok) {
+                    let data = await response.json();
+                    console.log('Data:', data);
+                } else {
+                    const errorData = await response.json();
+                    console.error('Error:', errorData);
+                }
+            } catch (error) {
+                console.error('Caught an error:', error);
+            }
+        })
+    </script>
+</body>
+</html>
