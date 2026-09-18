@@ -3,6 +3,9 @@
 ## Overview:
 ## FitGenie project 2024 my graduation project , is a generative‑AI graduation project that automatically creates personalized nutrition and workout plans based on a user’s physical data, fitness goals, and dietary restrictions. The system also allows users to upload a photo of a meal, from which the AI extracts ingredients and estimates nutritional facts. The core of the application is built with Django REST Framework and leverages Google’s Gemini and Gemini Pro Vision models to generate content
 
+## Demo Video
+🎥 [Watch the FitGenie demo on YouTube](https://www.youtube.com/watch?v=ABC123)
+
 ## Key Features:
 - **Personalized Meal Plans – Generates complete daily meal plans (breakfast, lunch, two snacks, dinner) with calorie, protein, and carbohydrate breakdowns, taking into account user allergies and fitness goals.**
 - **Workout Plan Generation – Produces workout routines tailored to the user’s fitness level and objectives.**
